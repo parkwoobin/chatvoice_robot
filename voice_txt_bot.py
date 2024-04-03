@@ -61,22 +61,29 @@ def main():
             st.session_state["OPENAI_API"] = ""
 
         if "messages" not in st.session_state:
-            st.session_state["messages"] = [{"role": "assistant", "content": "나는 강남대학교에 다니는 박진우 chatbot이야"}]
+            st.session_state["messages"] = [{"role": "assistant", "content": "나는 강남대학교에 다니는 박진우 chat bot이야"}]
 
         if "check_audio" not in st.session_state:
             st.session_state["check_reset"] = False
 
     with st.sidebar:
+
         st.session_state["OPENAI_API"] = st.text_input(label="OPENAI API 키", placeholder="Enter your API key", value="", type="password")
+        st.markdown("""<style>div[class*="stTextInput"] > label > div[data-testid="stMarkdownContainer"] > p {font-size: 20px; font-weight: bold;}</style>""", unsafe_allow_html=True)
         
 
         st.markdown(" --- ")
+
+
         # GPT 모델 선택하기 위한 라디오 버튼 생성
         model = st.radio(label="GPT 모델", options=["gpt-3.5-turbo", "gpt-4"])
+        st.markdown("""<style>div[class*="stRadio"] > label > div[data-testid="stMarkdownContainer"] > p {font-size: 20px; font-weight: bold;}</style>""", unsafe_allow_html=True)
+
 
         st.markdown(" --- ")
 
-        st.subheader("음성 질문")
+
+        st.markdown('<p style="font-size: 20px; font-weight: bold;">음성 질문</p>', unsafe_allow_html=True)
         if st.session_state["OPENAI_API"]:
             audio = audiorecorder("🎙️음성 질문", "🔴녹음 중 ... ")
             if (audio.duration_seconds > 0) and (st.session_state["check_reset"] == False):
@@ -88,14 +95,30 @@ def main():
 
         st.markdown(" --- ")
 
+
         # 리셋 버튼 생성
         if st.button(label="초기화"):
             # 리셋 코드
             st.session_state["chat"] = []
-            st.session_state["messages"] = [{"role": "assistant", "content": "나는 강남대학교에 다니는 박진우 chatbot이야"}]
+            st.session_state["messages"] = [{"role": "assistant", "content": "나는 강남대학교에 다니는 박진우 chat bot이야"}]
             st.session_state["check_reset"] = True
         
-        st.markdown(" --- ")
+       
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+        st.subheader("참고 자료")
+        "[Get an OpenAI API key](https://platform.openai.com/api-keys)"
+        "[View the Source Code](https://github.com/parkwoobin/chatvoice_robot/blob/main/voice_txt_bot.py)"
+        "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/parkwoobin/chatvoice_robot)"
 
 
     
