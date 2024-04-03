@@ -28,11 +28,11 @@ def ask_gpt(prompt, model, apikey):
 
 
 def main():
-    st.set_page_config(page_title="AI 진우 Chat Bot", page_icon="🐼")
+    st.set_page_config(page_title="AI 진우 챗봇", page_icon="🐼")
     
 
     # 제목
-    st.header("🐼 AI 진우 Chat Bot")
+    st.header("🐼 AI 진우 챗봇")
     st.caption("A streamlit chatbot powered by OpenAI ParkWB & LeeSW")
 
     # 기본 설명
