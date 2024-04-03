@@ -77,8 +77,8 @@ def main():
         st.markdown(" --- ")
 
         st.subheader("음성 질문")
-        audio = audiorecorder("음성 질문", "녹음 중 ... ")
-        if (audio.duration_seconds > 0) and (st.session_state["check_reset"] == False):
+        audio = audiorecorder("🎙️음성 질문", "🔴녹음 중 ... ")
+        if (audio.duration_seconds > 0) and (st.session_state["check_reset"] == False and st.session_state["OPENAI_API"]):
             # 음성 재생
             st.audio(audio.export().read())
             # 음원 파일에서 텍스트 추출
@@ -93,6 +93,9 @@ def main():
             st.session_state["chat"] = []
             st.session_state["messages"] = [{"role": "assistant", "content": "나는 강남대학교에 다니는 박진우 chatbot이야"}]
             st.session_state["check_reset"] = True
+        
+        st.markdown(" --- ")
+
 
     
     if not st.session_state["OPENAI_API"]:
