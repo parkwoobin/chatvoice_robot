@@ -45,8 +45,6 @@ def main():
             - 이 프로그램은 강남대학교 박우빈, 이승우 학생이 공동으로 제작하였습니다.
             """)
 
-        st.markdown("---")
-
         # session state 초기화
         if "chat" not in st.session_state:
             st.session_state["chat"] = []
