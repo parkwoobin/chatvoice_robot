@@ -5,7 +5,7 @@
 - Maker : 박우빈, 이승우
 
 ## 설명
-1. AI 진우 프로그램은 Chat GPT API를 사용하였습니다.
+1. AI 진우 프로젝트는 OpenAI API를 사용하였습니다.
 2. GPT 모델의 선택이 가능합니다.(gpt-3.5-turbo, gpt-4)
 3. STT(Speech-To-Text)는 OpenAI의 Whisper AI를 활용하였습니다.
 4. Chat GPT API key를 입력하지 않으면 작동이 되지 않으니 주의 바랍니다.
