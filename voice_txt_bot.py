@@ -32,16 +32,17 @@ def main():
 
     # 제목
     st.header("🐼 음성 진우 프로그램")
-    st.caption("A streamlit chatbot powered by OpenAI")
+    st.caption("A streamlit chatbot powered by OpenAI ParkWB & LeeSW")
 
     # 기본 설명
     with st.expander("음성 진우 프로그램에 관하여", expanded=False):
+        
         st.write(
             """
             - 음성 진우 프로그램은 chat gpt api를 사용하였습니다.
             - 강남대학교 박진우 학생을 모티브로 제작되었습니다.
             - STT(Speech-To-Text)는 OpenAI의 Whisper AI를 활용하였습니다.
-            - 이 프로그램은 이승우, 박우빈이 공동으로 제작하였습니다.
+            - 이 프로그램은 강남대학교 박우빈, 이승우 학생이 공동으로 제작하였습니다.
             """)
 
         st.markdown("---")
@@ -54,15 +55,14 @@ def main():
             st.session_state["OPENAI_API"] = ""
 
         if "messages" not in st.session_state:
-            st.session_state["messages"] = [{"role": "assistant", "content": "나는 강남대학교에 다니는 박진우 chat bot이야"}]
+            st.session_state["messages"] = [{"role": "assistant", "content": "나는 강남대학교에 다니는 박진우 chatbot이야"}]
 
         if "check_audio" not in st.session_state:
             st.session_state["check_reset"] = False
 
     with st.sidebar:
         st.session_state["OPENAI_API"] = st.text_input(label="OPENAI API 키", placeholder="Enter your api", value="", type="password")
-        if not st.session_state["OPENAI_API"]:
-            st.info("⚠️ Please add your OpenAI API key!")
+        
 
         st.markdown(" --- ")
         # GPT 모델 선택하기 위한 라디오 버튼 생성
@@ -77,11 +77,7 @@ def main():
             st.audio(audio.export().read())
             # 음원 파일에서 텍스트 추출
             question = STT(audio, st.session_state["OPENAI_API"])
-
-            # 채팅을 시각화하기 위해 질문 내용 저장
             
-
-        
 
         st.markdown(" --- ")
 
@@ -93,6 +89,9 @@ def main():
             st.session_state["check_reset"] = True
 
     
+    if not st.session_state["OPENAI_API"]:
+            st.info("⚠️ Please add your OpenAI API key!")
+            st.stop()
 
     for msg in st.session_state.messages:
         st.chat_message(msg["role"]).write(msg["content"])
@@ -115,7 +114,7 @@ def main():
 
         # GPT 모델을 통해 대답 생성
 
-        gpt_response = client.chat.completions.create(model = model, messages=st.session_state.messages)
+        gpt_response = client.chat.completions.create(model = model,messages=st.session_state.messages)
         msg1 = gpt_response.choices[0].message.content
 
         # 생성된 대답을 시각화하기 위해 대화 내용에 추가
