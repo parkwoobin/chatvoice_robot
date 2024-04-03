@@ -28,7 +28,8 @@ def ask_gpt(prompt, model, apikey):
 
 
 def main():
-    st.set_page_config(page_title="음성 진우 프로그램")
+    st.set_page_config(page_title="음성 진우 프로그램", page_icon="🐼")
+    
 
     # 제목
     st.header("🐼 AI 진우 프로그램")
