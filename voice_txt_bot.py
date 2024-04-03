@@ -97,13 +97,14 @@ def main():
 
 
         # 리셋 버튼 생성
-        if st.button(label="초기화"):
+        if st.button(label="🔄️ 리셋"):
             # 리셋 코드
             st.session_state["chat"] = []
             st.session_state["messages"] = [{"role": "assistant", "content": "나는 강남대학교에 다니는 박진우 chat bot이야"}]
             st.session_state["check_reset"] = True
         
        
+
         st.markdown("")
         st.markdown("")
         st.markdown("")
@@ -121,7 +122,7 @@ def main():
 
     
     if not st.session_state["OPENAI_API"]:
-            st.info("⚠️ Please add your OpenAI API key!")
+            st.info("Please add your OpenAI API key!",icon="⚠️")
             st.stop()
 
     for msg in st.session_state.messages:
