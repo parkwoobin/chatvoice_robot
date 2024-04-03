@@ -129,7 +129,7 @@ def main():
         st.chat_message(msg["role"]).write(msg["content"])
 
 
-    if response := st.chat_input():
+    if response := st.chat_input("텍스트를 입력하세요"):
         client = openai.OpenAI(api_key=st.session_state["OPENAI_API"])
         st.session_state.messages.append({"role": "user", "content": response})
         st.chat_message("user").write(response)
