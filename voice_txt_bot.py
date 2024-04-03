@@ -54,7 +54,7 @@ def main():
             st.session_state["OPENAI_API"] = ""
 
         if "messages" not in st.session_state:
-            st.session_state["messages"] = [{"role": "assistant", "content": "나는 강남대학교에 다니는 박진우 chatbot이야"}]
+            st.session_state["messages"] = [{"role": "assistant", "content": "나는 강남대학교에 다니는 박진우 chat bot이야"}]
 
         if "check_audio" not in st.session_state:
             st.session_state["check_reset"] = False
