@@ -31,7 +31,7 @@ def main():
     st.set_page_config(page_title="음성 진우 프로그램")
 
     # 제목
-    st.header("음성 진우 프로그램")
+    st.header("🐼 음성 진우 프로그램")
     st.caption("A streamlit chatbot powered by OpenAI")
 
     # 기본 설명
