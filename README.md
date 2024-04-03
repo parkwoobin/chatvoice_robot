@@ -1,4 +1,4 @@
-# AI 진우 chat bot 만들기 프로젝트
+# AI 진우 Chat Bot 만들기 프로젝트
 
 ## 정보
 - Update Date : 2024.04.04
