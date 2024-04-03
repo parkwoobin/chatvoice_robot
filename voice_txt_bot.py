@@ -113,8 +113,6 @@ def main():
         st.markdown("")
         st.markdown("")
         st.markdown("")
-        st.markdown("")
-        st.markdown("")
         st.subheader("참고 자료")
         "[Get an OpenAI API key](https://platform.openai.com/api-keys)"
         "[View the Source Code](https://github.com/parkwoobin/chatvoice_robot/blob/main/voice_txt_bot.py)"
