@@ -1,4 +1,4 @@
-#AI 진우 chat bot 만들기 프로젝트
+# AI 진우 chat bot 만들기 프로젝트
 
 Maker : 박우빈, 이승우
 
