@@ -42,6 +42,7 @@ def main():
             - 음성 진우 프로그램은 Chat GPT API를 사용하였습니다.
             - GPT 모델의 선택이 가능합니다.(gpt-3.5-turbo, gpt-4)
             - STT(Speech-To-Text)는 OpenAI의 Whisper AI를 활용하였습니다.
+            - Chat GPT API key를 입력하지 않으면 작동이 되지 않으니 주의 바랍니다.
             - 강남대학교 박진우 학생을 모티브로 제작되었습니다.
             - 이 프로그램은 강남대학교 박우빈, 이승우 학생이 공동으로 제작하였습니다.
             """)
@@ -60,7 +61,7 @@ def main():
             st.session_state["check_reset"] = False
 
     with st.sidebar:
-        st.session_state["OPENAI_API"] = st.text_input(label="OPENAI API 키", placeholder="Enter your api", value="", type="password")
+        st.session_state["OPENAI_API"] = st.text_input(label="OPENAI API 키", placeholder="Pleas Enter your API key", value="", type="password")
         
 
         st.markdown(" --- ")
