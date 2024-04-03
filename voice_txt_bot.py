@@ -77,12 +77,13 @@ def main():
         st.markdown(" --- ")
 
         st.subheader("음성 질문")
-        audio = audiorecorder("🎙️음성 질문", "🔴녹음 중 ... ")
-        if (audio.duration_seconds > 0) and (st.session_state["check_reset"] == False and st.session_state["OPENAI_API"]):
-            # 음성 재생
-            st.audio(audio.export().read())
-            # 음원 파일에서 텍스트 추출
-            question = STT(audio, st.session_state["OPENAI_API"])
+        if st.session_state["OPENAI_API"]:
+            audio = audiorecorder("🎙️음성 질문", "🔴녹음 중 ... ")
+            if (audio.duration_seconds > 0) and (st.session_state["check_reset"] == False):
+                # 음성 재생
+                st.audio(audio.export().read())
+                # 음원 파일에서 텍스트 추출
+                question = STT(audio, st.session_state["OPENAI_API"])
             
 
         st.markdown(" --- ")
