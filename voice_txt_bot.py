@@ -35,7 +35,7 @@ def main():
     st.caption("A streamlit chatbot powered by OpenAI")
 
     # 기본 설명
-    with st.expander("음성진우 프로그램에 관하여", expanded=False):
+    with st.expander("음성 진우 프로그램에 관하여", expanded=False):
         st.write(
             """
             - 음성 진우 프로그램은 chat gpt api를 사용하였습니다.
