@@ -61,7 +61,7 @@ def main():
             st.session_state["check_reset"] = False
 
     with st.sidebar:
-        st.session_state["OPENAI_API"] = st.text_input(label="OPENAI API 키", placeholder="Pleas Enter your API key", value="", type="password")
+        st.session_state["OPENAI_API"] = st.text_input(label="OPENAI API 키", placeholder="Enter your API key", value="", type="password")
         
 
         st.markdown(" --- ")
