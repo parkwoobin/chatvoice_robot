@@ -82,13 +82,20 @@ def main():
 
         st.markdown(" --- ")
 
+        
+        st.markdown('<p style="font-size: 20px; font-weight: bold;">음성 질문</p>', unsafe_allow_html=True)
+                if st.session_state["OPENAI_API"]:
+                    audio = audiorecorder("🎙️음성 질문", "🔴녹음 중 ... ")
+                    if (audio.duration_seconds > 0) and (st.session_state["check_reset"] == False):
+                        # 음성 재생
+                        st.audio(audio.export().read())
+                        # 음원 파일에서 텍스트 추출
+                        question = STT(audio, st.session_state["OPENAI_API"])
 
         
-            
-
         st.markdown(" --- ")
 
-
+        
         # 리셋 버튼 생성
         if st.button(label="🔄️ 리셋"):
             # 리셋 코드
@@ -132,7 +139,6 @@ def main():
         st.chat_message("assistant").write(msg)
 
     
-    voice()
     if (audio.duration_seconds > 0) and (st.session_state["check_reset"] == False):
         client = openai.OpenAI(api_key=st.session_state["OPENAI_API"])
         # 채팅을 시각화하기 위해 질문 내용 저장
@@ -148,16 +154,7 @@ def main():
         st.session_state["messages"].append({"role": "assistant", "content": msg1})
         st.chat_message("assistant").write(msg1)
 
-def voice():
-    st.markdown('<p style="font-size: 20px; font-weight: bold;">음성 질문</p>', unsafe_allow_html=True)
-        if st.session_state["OPENAI_API"]:
-            audio = audiorecorder("🎙️음성 질문", "🔴녹음 중 ... ")
-            if (audio.duration_seconds > 0) and (st.session_state["check_reset"] == False):
-                # 음성 재생
-                st.audio(audio.export().read())
-                # 음원 파일에서 텍스트 추출
-                question = STT(audio, st.session_state["OPENAI_API"])
-    
+
 
 if __name__=="__main__":
     main()
