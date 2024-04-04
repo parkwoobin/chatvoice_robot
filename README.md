@@ -1,7 +1,7 @@
 # AI 진우 Chat Voice Robot 프로젝트
 
 ## 정보
-- Update Date : 2024.04.04
+- Update Date : 2024.04.03
 - Maker : 박우빈, 이승우
 
 ## 설명
