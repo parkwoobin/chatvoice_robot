@@ -133,7 +133,7 @@ def main():
 
     
     voice()
-    elif (audio.duration_seconds > 0) and (st.session_state["check_reset"] == False):
+    if (audio.duration_seconds > 0) and (st.session_state["check_reset"] == False):
         client = openai.OpenAI(api_key=st.session_state["OPENAI_API"])
         # 채팅을 시각화하기 위해 질문 내용 저장
         st.session_state["messages"].append({"role": "user", "content": question})
