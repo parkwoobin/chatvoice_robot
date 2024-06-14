@@ -76,7 +76,7 @@ def main():
 
 
         # GPT 모델 선택하기 위한 라디오 버튼 생성
-        model = st.radio(label="GPT 모델", options=["gpt-3.5-turbo", "gpt-4"])
+        model = st.radio(label="GPT 모델", options=["gpt-3.5-turbo", "gpt-4", "gpt-4o"])
         st.markdown("""<style>div[class*="stRadio"] > label > div[data-testid="stMarkdownContainer"] > p {font-size: 20px; font-weight: bold;}</style>""", unsafe_allow_html=True)
 
 
